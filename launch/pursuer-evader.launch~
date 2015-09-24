@@ -1,0 +1,13 @@
+<launch>
+	<node name="stage" pkg="stage_ros" type="stageros"
+	      args="$(find lab1)/world/playground2.world" />
+	
+	
+    <node pkg="lab1" type="evader"
+          args="/robot_0" name="turtle1_tf_broadcaster" />
+    <node pkg="lab1" type="evader"
+          args="/robot_1" name="turtle2_tf_broadcaster" />
+	<node pkg="lab1" type="pursuer"
+          name="listener" />
+
+  </launch>
